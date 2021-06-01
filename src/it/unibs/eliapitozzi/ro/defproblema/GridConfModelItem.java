@@ -12,23 +12,18 @@ package it.unibs.eliapitozzi.ro.defproblema;
  * @author Elia
  */
 public class GridConfModelItem {
+    private final int q;
     private final int a;
     private final int b;
-    private final int q;
 
-    public GridConfModelItem(int a, int b, int q) {
+    public GridConfModelItem(int q, int a, int b) {
+        this.q = q;
         this.a = a;
         this.b = b;
-        this.q = q;
     }
 
-    @Override
-    public String toString() {
-        return "GridModelItem{" +
-                "a=" + a +
-                ", b=" + b +
-                ", q=" + q +
-                '}';
+    public int getQ() {
+        return q;
     }
 
     public int getA() {
@@ -37,9 +32,5 @@ public class GridConfModelItem {
 
     public int getB() {
         return b;
-    }
-
-    public int getQ() {
-        return q;
     }
 }

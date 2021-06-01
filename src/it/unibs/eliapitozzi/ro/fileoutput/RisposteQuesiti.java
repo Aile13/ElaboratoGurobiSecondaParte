@@ -1,12 +1,14 @@
 package it.unibs.eliapitozzi.ro.fileoutput;
 
-import gurobi.*;
+import gurobi.GRB;
+import gurobi.GRBException;
+import gurobi.GRBModel;
+import gurobi.GRBVar;
 import it.unibs.eliapitozzi.ro.defproblema.DatiProblema;
-import org.ejml.simple.SimpleMatrix;
+import it.unibs.eliapitozzi.ro.defproblema.GridConfModelItem;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,31 +39,51 @@ public class RisposteQuesiti {
 
             // Stampa risposta quesito 1
             writer.println("QUESITO I:");
-            writer.printf("funzione obiettivo = %.04f\n", model.get(GRB.DoubleAttr.ObjVal));
+            writer.printf("funzione obiettivo = %d\n", Math.round(model.get(GRB.DoubleAttr.ObjVal)));
 
-            // Ciclo sui k elementi del vettore vars, ovvero le mie var originali
-            writer.print("soluzione di base ottima: [");
-            // Ciclo sulle var originali
-            for (GRBVar var : model.getVars()) {
-                writer.printf("%.04f, ", Math.abs(var.get(GRB.DoubleAttr.X)));
+            // Ciclo sulle prime m * n variabili, ovvero le mie var bin associate
+            // all'assegnamento di una conf per filiale. Quindi operata una approssimazione all'intero,
+            // verifico quale sia quella a 1, e stampa relativo profitto associato.
+            for (int i = 0; i < datiPb.getM() * datiPb.getN(); i++) {
+                GRBVar var = model.getVar(i);
+                long valoreVar = Math.round(var.get(GRB.DoubleAttr.X));
+                if (valoreVar == 1) {
+                    int numFiliale = i / datiPb.getN();
+                    List<GridConfModelItem> listConf = datiPb.getGrid().getConfItemsListByFilialeNum(numFiliale);
+                    int numConf = i % datiPb.getN();
+                    int profittoAssociato = listConf.get(numConf).getQ();
+                    writer.printf("filiale p_%d: %d\n", numFiliale + 1, profittoAssociato);
+                }
             }
 
-           /* // Ciclo sulle var di slack
-            for (int i = 0; i < datiPb.getM() - 1; i++) {
-                writer.printf("%.04f, ", Math.abs(model.getConstr(i).get(GRB.DoubleAttr.Slack)));
+            // Stampa numero processori inutilizzati e GB inutilizzati
+            // Ciclo sulle varie conf scelte e poi conto i processori usati e GB usati
+            // Per sottrazione con quelli in grid ottengo quelli non utilizzati
+            int numProcUsati=0;
+            int numGBMemUsati=0;
+
+            for (int i = 0; i < datiPb.getM() * datiPb.getN(); i++) {
+                GRBVar var = model.getVar(i);
+                long valoreVar = Math.round(var.get(GRB.DoubleAttr.X));
+                if (valoreVar == 1) {
+                    int numFiliale = i / datiPb.getN();
+                    List<GridConfModelItem> listConf = datiPb.getGrid().getConfItemsListByFilialeNum(numFiliale);
+                    int numConf = i % datiPb.getN();
+
+                    numProcUsati += listConf.get(numConf).getA();
+                    numGBMemUsati += listConf.get(numConf).getB();
+                }
             }
-            writer.printf("%.04f]\n", Math.abs(model.getConstr(datiPb.getM() - 1).get(GRB.DoubleAttr.Slack)));
-*/
+
+            int numProcInutilizzati = datiPb.getK() - numProcUsati;
+            int numGBMemInutilizzati = datiPb.getG() - numGBMemUsati;
+
+            writer.printf("processori inutilizzati = %d\n", numProcInutilizzati);
+            writer.printf("GB inutilizzati = %d\n", numGBMemInutilizzati);
 
             // Stampa risposta quesito 2
             writer.println("\nQUESITO II:");
 
-            // Variabili in bose
-            writer.print("varibili in base: [");
-            // Variabili originali in base o meno
-            for (GRBVar var : model.getVars()) {
-                writer.print(var.get(GRB.IntAttr.VBasis) == 0 ? "1, " : "0, ");
-            }
             /*// Variabili slack in base o meno
             for (int i = 0; i < datiPb.getM() - 1; i++) {
                 writer.print(model.getConstr(i).get(GRB.IntAttr.CBasis) == 0 ? "1, " : "0, ");
@@ -70,18 +92,13 @@ public class RisposteQuesiti {
                     .get(GRB.IntAttr.CBasis) == 0 ? "1]\n" : "0]\n");
 */
 
-            // CCR
-            writer.print("coefficienti di costo ridotto: [");
-            // Var originali
-            for (GRBVar var : model.getVars()) {
-                writer.printf("%.04f, ", Math.abs(var.get(GRB.DoubleAttr.RC)));
-            }
             // Var slack
             /*for (int i = 0; i < datiPb.getM() - 1; i++) {
                 writer.printf("%.04f, ", Math.abs(model.getConstr(i).get(GRB.DoubleAttr.Pi)));
             }
             writer.printf("%.04f]\n", Math.abs(model.getConstr(datiPb.getM() - 1).get(GRB.DoubleAttr.Pi)));
 */
+/*
 
             // Soluzione ottima multipla
             writer.print("soluzione ottima multipla: ");
@@ -111,7 +128,9 @@ public class RisposteQuesiti {
             }
 
             writer.println(multipla ? "Sì" : "No");
+*/
 
+/*
 
             // Soluzione ottima degenere
             writer.print("soluzione ottima degenere: ");
@@ -152,6 +171,7 @@ public class RisposteQuesiti {
             }
             writer.println(vincoliOttimo);
 
+*/
 
             // Stampa risposta quesito 3
             //writer.println("\nQUESITO III:");

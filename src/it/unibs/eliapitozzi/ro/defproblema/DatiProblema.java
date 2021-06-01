@@ -1,9 +1,7 @@
 package it.unibs.eliapitozzi.ro.defproblema;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.List;
 
 /**
  * Legge file txt fornito e costruisce il modello in formato lp.
@@ -22,6 +20,7 @@ public class DatiProblema {
      * k, numero processori totali disponibili in grid;
      * g, numero GB totali di memoria disponibili in grid;
      * <p>
+     * percUsoGrid, percentuale uso di risorse grid da imporre in vincolo;
      * Poi modello riassunti conf di processi.
      */
 
@@ -29,6 +28,7 @@ public class DatiProblema {
     private int n;
     private int k;
     private int g;
+    private double percUsoGrid = 0.90;
     private GridConfModel grid = new GridConfModel();
 
     /**
@@ -37,10 +37,29 @@ public class DatiProblema {
      */
     public DatiProblema() {
         leggiEEstraiDati();
-        // elaboraFileModelloLP();
+        elaboraFileModelloLP();
     }
 
-/*
+    public int getG() {
+        return g;
+    }
+
+    public int getK() {
+        return k;
+    }
+
+    public GridConfModel getGrid() {
+        return grid;
+    }
+
+    public int getM() {
+        return m;
+    }
+
+    public int getN() {
+        return n;
+    }
+
     private void elaboraFileModelloLP() {
 
         PrintWriter w;
@@ -48,81 +67,149 @@ public class DatiProblema {
             w = new PrintWriter(MODEL_FILE_PATH);
 
             // Stampa descrizione file
-            w.println("\\ LP file per definizione problema ottimizzazione di elaborato");
-            w.println("\\ Variabili tutte continue");
+            w.println("\\ LP file per definizione problema di elaborato");
+            w.println("\\ Variabili tutte intere o binarie");
 
 
             // Stampa def problema in formato lp
 
             // Stampa funzione obiettivo
-            w.println("\nMinimize w\n");
+            w.println("\nMaximize");
+            w.print("  "); // per migliore formattazione
+
+            List<GridConfModelItem> listConf;
+
+            for (int i = 0; i < m - 1; i++) {
+                listConf = grid.getConfItemsListByFilialeNum(i);
+                for (int j = 0; j < n; j++) {
+                    w.printf("%d c_%d_%d + ", listConf.get(j).getQ(), i + 1, j + 1);
+                }
+            }
+
+            listConf = grid.getConfItemsListByFilialeNum(m - 1);
+            for (int j = 0; j < n - 1; j++) {
+                w.printf("%d c_%d_%d + ", listConf.get(j).getQ(), m, j + 1);
+            }
+            w.printf("%d c_%d_%d\n", listConf.get(n - 1).getQ(), m, n);
+
 
             // Aggiungo vincoli
-            w.println("Subject To");
+            w.println("\nSubject To");
 
-            // Vincolo w >= xi
-            for (int i = 0; i < n; i++) {
-                String label = String.format("  c_di_w_e_x%d: ", i + 1);
-                w.printf(label + "w - x%d >= 0\n", i + 1, i + 1);
+            // Vincolo di scelta singola conf per ogni filiale, una riga per ogni filiale
+            for (int i = 0; i < m; i++) {
+                w.printf("  v_sing_conf_per_filiale_%d: ", i + 1);
+                for (int j = 0; j < n - 1; j++) {
+                    w.printf("c_%d_%d + ", i + 1, j + 1);
+                }
+                w.printf("c_%d_%d = 1\n", i + 1, n);
             }
 
 
             // Salto riga tra un tipo di vincolo e un altro
             w.println();
 
+            // Vincoli di utilizzo massimo delle risorse di grid,
+            // le filiali nel complesso non posso usare più
+            // del quantitativo di risorse messe a disposizione dalla grid
 
-            // Vincolo estremi percentuali forniti per ogni xi, entro omega e teta
-            for (int i = 0; i < n; i++) {
-                String labelEstrMin = String.format("  c_di_x%d_e_omega: ", i + 1);
-                String labelEstrMax = String.format("  c_di_x%d_e_teta: ", i + 1);
-
-                w.printf(labelEstrMin + "x%d >= %.02f\n", i + 1, omega);
-                w.printf(labelEstrMax + "x%d <= %.02f\n", i + 1, teta);
+            // Per num di cpu
+            w.print("  v_max_uso_risorse_grid_cpu: ");
+            for (int i = 0; i < m - 1; i++) {
+                listConf = grid.getConfItemsListByFilialeNum(i);
+                for (int j = 0; j < n; j++) {
+                    w.printf("%d c_%d_%d + ", listConf.get(j).getA(), i + 1, j + 1);
+                }
             }
+
+            listConf = grid.getConfItemsListByFilialeNum(m - 1);
+            for (int j = 0; j < n - 1; j++) {
+                w.printf("%d c_%d_%d + ", listConf.get(j).getA(), m, j + 1);
+            }
+            w.printf("%d c_%d_%d <= %d\n", listConf.get(n - 1).getA(), m, n, k);
+
+
+            // Per num di GB di mem
+            // Salto riga tra un tipo di vincolo e un altro
+            w.println();
+            w.print("  v_max_uso_risorse_grid_mem: ");
+
+            for (int i = 0; i < m - 1; i++) {
+                listConf = grid.getConfItemsListByFilialeNum(i);
+                for (int j = 0; j < n; j++) {
+                    w.printf("%d c_%d_%d + ", listConf.get(j).getB(), i + 1, j + 1);
+                }
+            }
+
+            listConf = grid.getConfItemsListByFilialeNum(m - 1);
+            for (int j = 0; j < n - 1; j++) {
+                w.printf("%d c_%d_%d + ", listConf.get(j).getB(), m, j + 1);
+            }
+            w.printf("%d c_%d_%d <= %d\n", listConf.get(n - 1).getB(), m, n, g);
+
+
+            // Salto riga tra un tipo di vincolo e un altro
+            w.println();
+
+            // Vincolo di utilizzare almeno una risorsa grid almeno al 90%
+            // Uso variabile binaria v_cpu, per attivare o meno anche vincolo su uso memoria
+            w.print("  v_uso_90perc_risorse_grid_cpu: ");
+
+            for (int i = 0; i < m - 1; i++) {
+                listConf = grid.getConfItemsListByFilialeNum(i);
+                for (int j = 0; j < n; j++) {
+                    w.printf("%d c_%d_%d + ", listConf.get(j).getA(), i + 1, j + 1);
+                }
+            }
+
+            listConf = grid.getConfItemsListByFilialeNum(m - 1);
+            for (int j = 0; j < n - 1; j++) {
+                w.printf("%d c_%d_%d + ", listConf.get(j).getA(), m, j + 1);
+            }
+            w.printf("%d c_%d_%d - %.02f v_cpu >= 0\n", listConf.get(n - 1).getA(), m, n, k * percUsoGrid);
+
+
+            // Salto riga tra un tipo di vincolo e un altro
+            w.println();
+
+            w.print("  v_uso_90perc_risorse_grid_mem: ");
+
+            for (int i = 0; i < m - 1; i++) {
+                listConf = grid.getConfItemsListByFilialeNum(i);
+                for (int j = 0; j < n; j++) {
+                    w.printf("%d c_%d_%d + ", listConf.get(j).getB(), i + 1, j + 1);
+                }
+            }
+
+            listConf = grid.getConfItemsListByFilialeNum(m - 1);
+            for (int j = 0; j < n - 1; j++) {
+                w.printf("%d c_%d_%d + ", listConf.get(j).getB(), m, j + 1);
+            }
+            w.printf("%d c_%d_%d - %.02f v_mem >= 0\n", listConf.get(n - 1).getB(), m, n, g * percUsoGrid);
 
 
             // Salto riga tra un tipo di vincolo e un altro
             w.println();
 
 
-            // Vincolo per percentuale totale, tutte le xi insieme danno 100%
-            w.print("  c_delle_xi_somma_delle_percentuali:");
-            for (int i = 0; i < n - 1; i++) {
-                w.printf(" x%d +", i + 1);
-            }
-            w.printf(" x%d = 100,0\n", n);
-
+            // Vincolo per var binaria v_mem, per vincoli disgiuntivi
+            w.println("  v_var_bin_disg: v_mem + v_cpu = 1");
 
             // Salto riga tra un tipo di vincolo e un altro
             w.println();
 
-
-            // Vincolo temporale, tempo di esecuzione massimo ammesso
-            double totDatiInGB = h * g * 1000;
-
-            // Calcolo coefficiente per ogni xi
-            // (xi * 100 * totDati / alfa)  +  (xi * 100 * totDati / beta)
-            // Ho raccolto 100 e totDati, poi calcolato la somma dei reciproci di alfa e beta
-            for (int i = 0; i < n; i++) {
-
-                double coef = totDatiInGB / 100 *
-                        (1. / reteComputer.get(i).getAlfa() + 1. / reteComputer.get(i).getBeta());
-
-                String label = String.format("  c_di_x%d_tempo_max_esec:  ", i + 1);
-
-                w.printf(label + "%.02f x%d <= %d\n", coef, i + 1, tau);
-            }
-
-
-            // Salto riga tra un tipo di vincolo e un altro
-            w.println();
-
-
-            // Aggiungo intervallo di validita variabili xi, tra 0 e 100, perchè percentuale
+            // Specifiche di tipo e limitazione intervallo variabili utilizzate
             w.println("Bounds");
-            for (int i = 0; i < n; i++) {
-                w.printf("  0.0 <= x%d <= 100.0\n", i + 1);
+
+            w.println("Binary");
+            w.print("  "); // per migliore formattazione
+
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    w.printf("c_%d_%d ", i + 1, j + 1);
+                }
             }
+            w.println("v_cpu v_mem");
 
             // Salto riga
             w.println();
@@ -136,7 +223,6 @@ public class DatiProblema {
             e.printStackTrace();
         }
     }
-*/
 
     private void leggiEEstraiDati() {
         try {
@@ -150,13 +236,14 @@ public class DatiProblema {
             int[] intsSecondLine = parseInts(in.readLine());
             k = intsSecondLine[0];
             g = intsSecondLine[1];
-            
+
             // Legge e estrae dati configurazioni
             for (int i = 0; i < m; i++) {
                 for (int j = 0; j < n; j++) {
                     int[] valoriConf = parseInts(in.readLine());
 
-                    grid.addGridModelItemInFilialeNum(i,
+                    grid.addGridModelItemInFilialeNum(
+                            i,
                             new GridConfModelItem(
                                     valoriConf[0],
                                     valoriConf[1],

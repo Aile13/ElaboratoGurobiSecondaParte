@@ -1,0 +1,29 @@
+
+GRUPPO 55
+Componenti: Pitozzi
+
+
+QUESITO I:
+funzione obiettivo = 5255
+filiale p_1: 337
+filiale p_2: 9
+filiale p_3: 586
+filiale p_4: 361
+filiale p_5: 121
+filiale p_6: 1
+filiale p_7: 51
+filiale p_8: 721
+filiale p_9: 469
+filiale p_10: 361
+filiale p_11: 309
+filiale p_12: 61
+filiale p_13: 241
+filiale p_14: 589
+filiale p_15: 121
+filiale p_16: 271
+filiale p_17: 595
+filiale p_18: 51
+processori inutilizzati = 1
+GB inutilizzati = 0
+
+QUESITO II:

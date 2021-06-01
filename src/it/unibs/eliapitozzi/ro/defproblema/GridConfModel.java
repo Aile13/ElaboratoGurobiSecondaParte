@@ -21,7 +21,7 @@ public class GridConfModel {
         if (grid.size() < i + 1) {
             grid.add(new ArrayList<>());
         }
-        System.out.println(grid.size());
+
         grid.get(i).add(newItem);
     }
 
