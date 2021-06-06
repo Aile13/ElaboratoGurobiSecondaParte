@@ -1323,3 +1323,972 @@ Solution count 1: 5255
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Tue Jun  1 18:09:45 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.03 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Tue Jun  1 18:12:35 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.68 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Tue Jun  1 18:24:38 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.03 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Tue Jun  1 18:26:17 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.15 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 18:43:23 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.00 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.06 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 18:46:15 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.01 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 18:48:22 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.01 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 18:49:33 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.25 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:03:28 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.01 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:03:47 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.20 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:04:23 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.02 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:04:45 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.01 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:07:53 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.02 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:08:10 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.00 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.02 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:08:55 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.00 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:11:28 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.03 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:12:23 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.00 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:14:56 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.02 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%
+
+Gurobi 9.1.1 (win64, Java) logging started Thu Jun  3 19:17:15 2021
+
+Academic license - for non-commercial use only - expires 2021-07-26
+Read LP format model from file RisorseElaborato/problema.lp
+Reading time = 0.02 seconds
+: 23 rows, 110 columns, 544 nonzeros
+Gurobi Optimizer version 9.1.1 build v9.1.1rc0 (win64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 23 rows, 110 columns and 544 nonzeros
+Model fingerprint: 0xf39a5d3a
+Variable types: 0 continuous, 110 integer (110 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 7e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 9e+01]
+Variable types: 0 continuous, 110 integer (110 binary)
+
+Root relaxation: objective 5.290000e+03, 52 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 5290.00000    0    4          - 5290.00000      -     -    0s
+     0     0 5287.50000    0    4          - 5287.50000      -     -    0s
+     0     0 5279.75002    0    8          - 5279.75002      -     -    0s
+     0     0 5278.16669    0   10          - 5278.16669      -     -    0s
+     0     0 5275.50001    0    8          - 5275.50001      -     -    0s
+     0     0 5270.81819    0   11          - 5270.81819      -     -    0s
+     0     0 5270.47059    0   11          - 5270.47059      -     -    0s
+     0     0 5261.36842    0   11          - 5261.36842      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     0 5261.22581    0   11          - 5261.22581      -     -    0s
+     0     2 5261.22581    0   11          - 5261.22581      -     -    0s
+*    5     4               3    5255.0000000 5255.00000  0.00%   3.8    0s
+
+Cutting planes:
+  Gomory: 2
+  MIR: 1
+  StrongCG: 1
+  GUB cover: 1
+  Zero half: 3
+
+Explored 7 nodes (98 simplex iterations) in 0.02 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 1: 5255 
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 5.255000000000e+03, best bound 5.255000000000e+03, gap 0.0000%

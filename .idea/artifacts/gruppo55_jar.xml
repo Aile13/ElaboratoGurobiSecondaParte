@@ -20,8 +20,8 @@
       <element id="extracted-dir" path="$USER_HOME$/Desktop/Info/UniBS/ejml-v0.40-libs/ejml-zdense-0.40-sources.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Desktop/Info/UniBS/ejml-v0.40-libs/ejml-dsparse-0.40-sources.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$USER_HOME$/Desktop/Info/UniBS/ejml-v0.40-libs/ejml-experimental-0.40-sources.jar" path-in-jar="/" />
-      <element id="library" level="application" name="ejml" />
       <element id="library" level="application" name="Gurobi" />
+      <element id="library" level="application" name="ejml" />
     </root>
   </artifact>
 </component>

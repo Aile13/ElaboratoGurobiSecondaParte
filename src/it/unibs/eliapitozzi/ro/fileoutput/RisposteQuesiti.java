@@ -1,9 +1,6 @@
 package it.unibs.eliapitozzi.ro.fileoutput;
 
-import gurobi.GRB;
-import gurobi.GRBException;
-import gurobi.GRBModel;
-import gurobi.GRBVar;
+import gurobi.*;
 import it.unibs.eliapitozzi.ro.defproblema.DatiProblema;
 import it.unibs.eliapitozzi.ro.defproblema.GridConfModelItem;
 
@@ -81,133 +78,33 @@ public class RisposteQuesiti {
             writer.printf("processori inutilizzati = %d\n", numProcInutilizzati);
             writer.printf("GB inutilizzati = %d\n", numGBMemInutilizzati);
 
+
+
+            // Salto riga tra risposta ad un quesito e l'altro.
+            writer.println();
+
             // Stampa risposta quesito 2
-            writer.println("\nQUESITO II:");
+            writer.println("QUESITO II:");
 
-            /*// Variabili slack in base o meno
-            for (int i = 0; i < datiPb.getM() - 1; i++) {
-                writer.print(model.getConstr(i).get(GRB.IntAttr.CBasis) == 0 ? "1, " : "0, ");
-            }
-            writer.print(model.getConstr(datiPb.getM() - 1)
-                    .get(GRB.IntAttr.CBasis) == 0 ? "1]\n" : "0]\n");
-*/
+            // Verifico se ci sono eventualmente altre soluzioni disponibili oltre a quella trovata
+            // Mediante l'attributo di modello SolCount.
+            // Se è maggiore di 1 allora ci sono altre soluzioni che posso analizzare,
+            // Altrimenti non esistono soluzioni alternative e quindi non faccio niente.
 
-            // Var slack
-            /*for (int i = 0; i < datiPb.getM() - 1; i++) {
-                writer.printf("%.04f, ", Math.abs(model.getConstr(i).get(GRB.DoubleAttr.Pi)));
-            }
-            writer.printf("%.04f]\n", Math.abs(model.getConstr(datiPb.getM() - 1).get(GRB.DoubleAttr.Pi)));
-*/
-/*
+            if (model.get(GRB.IntAttr.SolCount) > 1) {
+                // Eventuale analisi di altre soluzioni
+                // Verifico il loro valore di funz ob.
+                // e guardo se corrispondono ad altra soluzione avendo
+                // coefficienti diversi per le var rispetto alla soluzione trovata.
+            } else {
+                // Caso alternativo di soluzione non trovata,
+                // stampo dicitura: "NON ESISTE".
 
-            // Soluzione ottima multipla
-            writer.print("soluzione ottima multipla: ");
-            // Controllo se c'è una var non in base con CCR nullo
-            boolean multipla = false;
-
-            // Ciclo su tutte le var, guardo tra quelle non in base
-            // se loro CCR è nullo
-
-            // Per var originali
-            for (GRBVar var : model.getVars()) {
-                if (var.get(GRB.IntAttr.VBasis) != 0) {
-                    if (var.get(GRB.DoubleAttr.RC) == 0.) {
-                        multipla = true;
-                        break;
-                    }
-                }
-            }
-            //Per var di slack
-            for (GRBConstr constr : model.getConstrs()) {
-                if (constr.get(GRB.IntAttr.CBasis) != 0) {
-                    if (constr.get(GRB.DoubleAttr.Pi) == 0.) {
-                        multipla = true;
-                        break;
-                    }
-                }
+               writer.println("NON ESISTE");
             }
 
-            writer.println(multipla ? "Sì" : "No");
-*/
-
-/*
-
-            // Soluzione ottima degenere
-            writer.print("soluzione ottima degenere: ");
-            // Controllo se c'è una var in base nulla.
-            boolean degenere = false;
-
-            // Ciclo su tutte le var, guardo tra quelle in base se nulle
-            // Per var originali
-            for (GRBVar var : model.getVars()) {
-                if (var.get(GRB.IntAttr.VBasis) == 0) {
-                    if (var.get(GRB.DoubleAttr.X) == 0.) {
-                        degenere = true;
-                        break;
-                    }
-                }
-            }
-            // Per var di slack
-            for (GRBConstr constr : model.getConstrs()) {
-                if (constr.get(GRB.IntAttr.CBasis) == 0) {
-                    if (constr.get(GRB.DoubleAttr.Slack) == 0.) {
-                        degenere = true;
-                        break;
-                    }
-                }
-            }
-            writer.println(degenere ? "Sì" : "No");
 
 
-            // Vincoli al vertice all'ottimo
-            writer.print("vincoli vertice ottimo: ");
-            // Se la var di slack del vincolo corrente è 0,
-            // allora il vincolo identifica il vertice ottimo
-            List<String> vincoliOttimo = new ArrayList<>();
-            for (GRBConstr constr : model.getConstrs()) {
-                if (constr.get(GRB.DoubleAttr.Slack) == 0.) {
-                    vincoliOttimo.add(constr.get(GRB.StringAttr.ConstrName));
-                }
-            }
-            writer.println(vincoliOttimo);
-
-*/
-
-            // Stampa risposta quesito 3
-            //writer.println("\nQUESITO III:");
-
-           /* // Estraggo matrice A, m x ( k + m ), vincoli x variabili pb in f. standard
-            SimpleMatrix a = new SimpleMatrix(datiPb.getM(), datiPb.getK() + datiPb.getM());
-            for (int i = 0; i < a.numRows(); i++) {
-                for (int nVar = 0; nVar < model.getRow(model.getConstr(i)).size(); nVar++) {
-                    int j = model.getRow(model.getConstr(i)).getVar(nVar).index();
-                    a.set(i, j, model.getCoeff(model.getConstr(i), model.getVar(j)));
-                }
-                char sense = model.getConstr(i).get(GRB.CharAttr.Sense);
-                double coeff;
-                if (sense == '>') {
-                    coeff = -1.;
-                } else {
-                    coeff = 1.;
-                }
-                a.set(i, datiPb.getK() + i, coeff);
-            }
-
-            // Estraggo matrice b, m x 1
-            SimpleMatrix b = new SimpleMatrix(datiPb.getM(), 1);
-            for (int i = 0; i < a.numRows(); i++) {
-                b.set(i, 0, model.getConstr(i).get(GRB.DoubleAttr.RHS));
-            }
-
-            // Estraggo matrice C, 1 x ( k + m )
-            SimpleMatrix c = new SimpleMatrix(1 , datiPb.getK() + datiPb.getM());
-            for (int i = 0; i < datiPb.getK(); i++) {
-                c.set(0, i, model.getVar(i).get(GRB.DoubleAttr.RC));
-            }
-            for (int i = 0; i < datiPb.getM(); i++) {
-                c.set(0, datiPb.getK() + i, Math.abs(model.getConstr(i).get(GRB.DoubleAttr.Pi)));
-            }
-*/
 
             // Chiudo writer
             writer.close();

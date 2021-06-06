@@ -27,3 +27,4 @@ processori inutilizzati = 1
 GB inutilizzati = 0
 
 QUESITO II:
+NON ESISTE

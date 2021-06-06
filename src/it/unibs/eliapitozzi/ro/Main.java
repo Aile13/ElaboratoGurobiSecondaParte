@@ -60,6 +60,8 @@ public class Main {
             System.out.printf("\nValore funzione obiettivo: %.04f\n", objVal);
 
             //System.out.println(model.getJSONSolution());
+            System.out.println("solCount " + model.get(GRB.IntAttr.SolCount));
+            System.out.println("sol number " + model.get(GRB.IntParam.SolutionNumber));
 
 
             // Stampa il file di output, risposte ai quesiti
